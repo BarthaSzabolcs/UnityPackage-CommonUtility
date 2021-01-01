@@ -1,0 +1,17 @@
+{
+  "name": "com.barthaszabolcs.commonutility",
+  "version": "1.0.0",
+  "displayName": "Bartha Szabolcs Common Utility",
+  "description": "This package contains common utility classes that I use in Unity.",
+  "keywords": [
+    "Common",
+    "Utility"
+  ],
+  "author": {
+    "name": "Bartha Szabolcs",
+    "email": "barthaszabolcs.gamedevelopment@gmail.com",
+    "url": ""
+  },
+  "type": "library",
+  "unity": "2017.1"
+}
