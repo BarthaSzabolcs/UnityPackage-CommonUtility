@@ -1,11 +1,10 @@
 {
-  "name": "com.barthaszabolcs.commonutility",
+  "name": "com.barthaszabolcs.common-utility",
   "version": "1.0.0",
-  "displayName": "Bartha Szabolcs Common Utility",
+  "displayName": "Common Utility",
   "description": "This package contains common utility classes that I use in Unity.",
   "keywords": [
-    "Common",
-    "Utility"
+    "Physics"
   ],
   "author": {
     "name": "Bartha Szabolcs",
