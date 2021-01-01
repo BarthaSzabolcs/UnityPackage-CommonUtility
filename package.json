@@ -1,6 +1,6 @@
 {
   "name": "com.barthaszabolcs.common-utility",
-  "version": "1.0.0",
+  "version": "0.1.1",
   "displayName": "Common Utility",
   "description": "This package contains common utility classes that I use in Unity.",
   "keywords": [
