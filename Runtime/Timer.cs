@@ -16,7 +16,7 @@ namespace BarthaSzabolcs.CommonUtility
         #endregion
         #region Enums
 
-        public enum OverflowHandlingType { AutoReset, Clamp };
+        public enum OverflowHandlingType { None, AutoReset, Clamp };
 
         #endregion
         #region Editor Settings
