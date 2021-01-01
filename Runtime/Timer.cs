@@ -16,12 +16,37 @@ namespace BarthaSzabolcs.CommonUtility
         #endregion
         #region Enums
 
-        public enum OverflowHandlingType { None, AutoReset, Clamp };
+        /// <summary>
+        /// Overflow is the state of the timer, when <see cref="ElapsedTime"/> >= <see cref="Interval"/>.
+        /// </summary>
+        public enum OverflowHandlingType 
+        { 
+            /// <summary>
+            /// Does nothing on overflow.
+            /// </summary>
+            None,
+
+            /// <summary>
+            /// Will reset time to 0 on overflow.
+            /// </summary>
+            AutoReset,
+
+            /// <summary>
+            /// Clamps the time to <see cref="Interval"/> on overflow.
+            /// </summary>
+            Clamp
+        };
 
         #endregion
         #region Editor Settings
 
         [SerializeField] private float _interval;
+
+        [Tooltip("Overflow is the state of the timer, when ElapsedTime >= Interval." 
+            + "\n"
+            + "\nNone = Does nothing on overflow." 
+            + "\nAutoReset = Will reset time to 0 on overflow."
+            + "\nClamp = Clamps the time to Interval on overflow.")]
         [SerializeField] private OverflowHandlingType _overflowHandling;
 
         #endregion
@@ -111,24 +136,30 @@ namespace BarthaSzabolcs.CommonUtility
 
         #region Public
 
-        public Timer() { }
-
-        public Timer(float interval, bool startElapsed, OverflowHandlingType overflowHandlingType)
+        /// <summary>
+        /// Call this to properly initialize.
+        /// </summary>
+        /// <param name="startElapsed"></param>
+        public void Init(bool startElapsed = false)
         {
-            _interval = interval;
-            if (startElapsed)
-            {
-                _elapsedTime = _interval;
-            }
+            _elapsedTime = startElapsed ? _interval : 0;
 
-            SetOverflowHanding(overflowHandlingType);
+            SetOverflowHanding(_overflowHandling);
         }
 
+        /// <summary>
+        /// Advances the timer by <paramref name="deltaTime"/>.
+        /// </summary>
+        /// <param name="deltaTime"></param>
         public void Tick(float deltaTime)
         {
             ElapsedTime += deltaTime;
         }
 
+        /// <summary>
+        /// Resets the timer to <paramref name="resetTime"/>.
+        /// </summary>
+        /// <param name="resetTime"></param>
         public void Reset(float resetTime = 0)
         {
             ElapsedTime = resetTime;
