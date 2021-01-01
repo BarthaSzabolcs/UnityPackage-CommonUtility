@@ -67,6 +67,8 @@ namespace BarthaSzabolcs.CommonUtility
                     OnTimeElapsed.Invoke();
                 }
 
+                _elapsedTime = value;
+
                 if (overflowHandlingAction != null)
                 {
                     overflowHandlingAction.Invoke();
